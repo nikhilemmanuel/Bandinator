@@ -1,4 +1,5 @@
-import * as RandomActions from './random'
-export const ActionCreators = Object.asign({},
-  RandomActions
-)
+'use strict';
+
+import * as TestActions from './test';
+
+export { TestActions };
