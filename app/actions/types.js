@@ -1,0 +1,1 @@
+export const GET_RANDOM_DATA = 'GET_RANDOM_DATA';
