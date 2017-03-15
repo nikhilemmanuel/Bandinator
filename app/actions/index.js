@@ -1,5 +1,1 @@
-'use strict';
-
-import * as TestActions from './test';
-
-export { TestActions };
+export const ping = () => ({ type: 'PING' });
