@@ -1,0 +1,1 @@
+export const GET_MY_NAME = 'GET_MY_NAME';

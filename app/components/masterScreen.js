@@ -1,23 +1,20 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {ping} from '../actions';
+import {getMyName} from '../actions';
 
-// let MasterScreen = ({ isPinging, ping }) => (   <div>     <h1>is pinging:
-// {isPinging.toString()}</h1>     <button onClick={ping}>Start PING</button>
-// </div> );
 
 class MasterScreen extends React.Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <TouchableOpacity onPress={this.props.ping}>
+        <TouchableOpacity onPress={this.props.getMyName}>
           <Text>
-            Start PING
+            Start JONG
           </Text>
         </TouchableOpacity>
         <Text>
-          {JSON.stringify(this.props.isPinging)}
+         Nothing
         </Text>
       </View>
     );
@@ -33,6 +30,17 @@ const styles = StyleSheet.create({
   }
 });
 
-MasterScreen = connect(({isPinging}) => ({isPinging}), {ping})(MasterScreen);
+function mapStateToProps(state) {
+  console.log('mapStateToProps',state)
+  return {
+    data: state.user,
+    page: state.page
+  }
+}
 
-export default MasterScreen;
+function mapStateToProps(state) {
+  return {
+   
+  };
+};
+export default connect(mapStateToProps, { getMyName })(MasterScreen);
