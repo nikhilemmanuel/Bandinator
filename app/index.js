@@ -4,7 +4,7 @@ import { AsyncStorage, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import MasterScreen from './components/masterScreen'
-import configureStore from './store';
+// import configureStore from './store';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,24 +16,21 @@ export default class App extends React.Component {
     
   componentWillMount() {
     console.disableYellowBox = true;
-    AsyncStorage.getItem('applicationState', (error, appState) => {
-      if(!error) {
-        this.setState({ store: configureStore(JSON.parse(appState)) });     
-      }
-    });
+    // AsyncStorage.getItem('applicationState', (error, appState) => {
+    //   if(!error) {
+    //     this.setState({ store: configureStore(JSON.parse(appState)) });     
+    //   }
+    // });
   }
 
   render() {
-    console.log(this.state.store, 'sore')
-    if(this.state.store) {
+    console.log(store, 'sore')
+    
       return (
-        <Provider store={this.state.store}>
+        <Provider store={store}>
          <MasterScreen />
         </Provider>
       )
-    }
-    else {
-      return <View />
-    }
+    
   }
 }

@@ -1,16 +1,12 @@
-export default (state = { isJonging: false }, action) => {
+export default (state = { isPinging: false }, action) => {
   switch (action.type) {
     case 'PING':
-      return { isPinging: true };
+      console.log('ping called reducer')
+      return { isPinging: 'PINGGGGGGGG' };
 
     case 'PONG':
-      return { isPinging: false };
-      
-    case 'JONG':
-      return { isJonging: true };
-
-    case 'JONG2':
-      return { isJonging: false };
+      console.log('pong called reducer')
+      return { isPinging: 'PONGGGGGG' };
 
     default:
       return state;

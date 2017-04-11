@@ -1,7 +1,6 @@
-import { combineEpics } from 'redux-observable';
-import { getMyName, getMyNameEpic } from './getMyName';
-
-const rootEpic = combineEpics(
-  getMyNameEpic
-);
-export { getMyName, rootEpic };
+export function ping() {
+  console.log('ping called')
+  return { 
+    type: 'PING' 
+  }
+};

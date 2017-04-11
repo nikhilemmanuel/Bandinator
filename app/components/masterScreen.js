@@ -1,20 +1,20 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {getMyName} from '../actions';
-
+// import {getMyName} from '../actions';
+import { ping } from '../actions';
 
 class MasterScreen extends React.Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <TouchableOpacity onPress={this.props.getMyName}>
+        <TouchableOpacity onPress={this.props.ping}>
           <Text>
             Start JONG
           </Text>
         </TouchableOpacity>
-        <Text>
-         Nothing
+        <Text>asdsada
+         {this.props.isPinging}
         </Text>
       </View>
     );
@@ -38,9 +38,9 @@ function mapStateToProps(state) {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-   
-  };
-};
-export default connect(mapStateToProps, { getMyName })(MasterScreen);
+// function mapStateToProps(state) {
+//   return {
+//    isPinging: state.
+//   };
+// };
+export default connect(({ isPinging }) => ({ isPinging }), { ping })(MasterScreen);
