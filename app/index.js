@@ -4,7 +4,6 @@ import { AsyncStorage, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import MasterScreen from './components/masterScreen'
-// import configureStore from './store';
 
 export default class App extends React.Component {
   constructor(props) {

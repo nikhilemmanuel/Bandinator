@@ -1,9 +1,16 @@
+import { combineEpics } from 'redux-observable';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import pingReducer from '../reducers/pingpong';
-import { pingEpic } from '../epics';
+import { pingEpic, pingEpicNew, fetchMoviesEpic } from '../epics';
+import { merge } from 'rxjs/observable/merge';
 
-const epicMiddleware = createEpicMiddleware(pingEpic);
+export const rootEpic = combineEpics(
+  pingEpic,
+  pingEpicNew
+);
+
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
 export default createStore(
   pingReducer,

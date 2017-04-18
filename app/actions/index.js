@@ -1,6 +1,18 @@
 export function ping() {
-  console.log('ping called')
-  return { 
-    type: 'PING' 
+  return {
+    type: 'PING'
+  }
+};
+
+export function pingNew() {
+  return {
+    type: 'PING_NEW'
+  }
+};
+
+export function getMovies() {
+  console.log('getMovies action called')
+  return {
+    type: 'GET_MOVIES'
   }
 };
